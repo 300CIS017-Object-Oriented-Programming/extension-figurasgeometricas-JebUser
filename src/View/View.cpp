@@ -11,12 +11,13 @@ View::View(){
 
 void View::agregarFigura() {
     int opcion;
-    float longitudLado, base, altura, radio, lado, diagonalMenor, diagonalMayor;
+    float longitudLado, base, altura, radio, lado, diagonalMenor, diagonalMayor, lado2, lado3;
     cout << "======== Figuras disponibles ========\n";
     cout << "1. Cuadrado\n";
     cout << "2. Circulo\n";
     cout << "3. Rectangulo\n";
     cout << "4. Rombo\n";
+    cout << "5. Triangulo\n";
     cout << "Indique que figura desea agregar:\n";
     cin >> opcion;
     switch (opcion){
@@ -47,6 +48,19 @@ void View::agregarFigura() {
             cout << "Ingrese la diagonal menor del rombo:\n";
             cin >> diagonalMenor;
             programaObj->agregarFigura(lado, diagonalMayor,diagonalMenor);// Importante el casteo para que se llame al metodo correcto
+            break;
+        }
+        case 5:{
+            cout << "Ingrese altura del triangulo:\n";
+            cin >> altura;
+            cout << "Ingrese base del triangulo:\n";
+            cin >> base;
+            cout << "Ingrese lado 2 del triangulo\n";
+            cin >> lado2;
+            cout << "Ingrese lado 2 del triangulo\n";
+            cin >> lado3;
+            programaObj->agregarFigura(base, altura, lado2, lado3);
+            break;
         }
     }
 }
@@ -63,7 +77,7 @@ void View::dibujarFigura() {
     cout << "Quiere la figura de un color?\n1. Si\n2. No\n>> ";
     cin >> opcion;
     if (opcion==1) {
-        cout << "1. Rojo\n2. Azul\n3. Verde\n4. Purpura\n5. Amarillo\n";
+        cout << "1. Rojo\n2. Azul\n3. Verde\n4. Purpura\n5. Amarillo\n6. Azul Claro\n";
         cin >> color;
         programaObj->dibujarFiguras(color);
     }else{
