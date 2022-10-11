@@ -13,6 +13,7 @@ void Programa::inicializarFiguras(){
     vectorFiguras.push_back(new Circulo(5));
     vectorFiguras.push_back(new Rectangulo(10,20));
     vectorFiguras.push_back(new Rombo(5,5,5));
+    vectorFiguras.push_back(new Triangulo(5, 4, 4, 3));
 }
 
 void Programa::agregarFigura(int lado){
@@ -29,6 +30,10 @@ void Programa::agregarFigura(int base, int altura){
 
 void Programa::agregarFigura(int lado, int diagonalMayor,int diagonalMenor){
     vectorFiguras.push_back(new Rombo(lado, diagonalMayor, diagonalMenor));
+}
+
+void Programa::agregarFigura(int base, int altura, int lado2, int lado3) {
+    vectorFiguras.push_back(new Triangulo(base, altura, lado2, lado3));
 }
 
 void Programa::mostrarAreaFigura() {
